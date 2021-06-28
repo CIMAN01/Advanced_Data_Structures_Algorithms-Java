@@ -53,19 +53,21 @@ public class TwoSum {
     }
 
 
-    // a method using HashMap (time complexity: O(n) )
+    // a method using a HashMap (time complexity: O(n) )
     public static int[] twoSum2(int[] nums, int target) {
         // create a new hashmap where key -> nums[i] element and value -> index i
         HashMap<Integer, Integer> hashmap = new HashMap<>();
         // only one loop needed
         for (int i = 0; i < nums.length; i++) {
-            // check if element value already exists in hashmap
-            if (hashmap.containsKey(nums[i])) {
-                // if so, create and return a new array with the found values from hashmap
-                return new int[] {hashmap.get(nums[i]), i};
+            // nums[i] + nums[i+1] = target -> nums[i+1] = target - nums[i]
+            int pairValue = target-nums[i];
+            // check whether array has the remaining difference elsewhere in the array or not
+            if (hashmap.containsKey(pairValue)) {
+                // if so, create and return a new array with the values found
+                return new int[]{hashmap.get(pairValue), i};
             }
-            // if element not found, add the difference to the hashmap
-            hashmap.put(target - nums[i], i); // nums[i] + nums[i+1] = target -> nums[i+1] = target - nums[i]
+            // if not found, keep adding pairs of array value/index into theHashMap
+            hashmap.put(nums[i], i);
         }
         // if a solution is not found, return an empty array
         return new int[] {};
