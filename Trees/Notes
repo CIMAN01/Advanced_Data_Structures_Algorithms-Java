@@ -1,0 +1,19 @@
+Depth vs Height:
+    depth is how many edges you have from a given node to the root node
+    height is the longest path (number of edges) from a given node (and doesn't have to be the root node) to a leaf (a leaf node is node that doesn't have any children)
+
+Binary Trees:
+    has only 0, 1, or 2 children
+    can perform insertion, deletion, and retrievals in O(log(n)) runtime
+    value of left child  < value of parent  < value of right child
+    -> everything to the left of the root (left subtree) is less than the value of the root, and everything to the right of the root (right subtree) is greater than the value of the root
+
+
+Traversals for Binary Search Trees:
+
+    Pre-order: visit the root of every subtree first
+
+    In-order: visit left child, then root, then right child -> easy to get the data sorted (such as an array): insert values into a binary search tree and do an in-order traversal (faster than some sort algorithms)
+
+    Post-order: visit the root of every subtree last
+
