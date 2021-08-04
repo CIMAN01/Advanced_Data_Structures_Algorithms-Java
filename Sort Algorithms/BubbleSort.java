@@ -24,7 +24,7 @@ public class BubbleSort {
             // an optimization for when the array is already sorted or partially sorted
             isSorted = true; // true means we need fewer than n iterations
             // iterate and compare the second item with the previous item (compare every two items)
-            for (int j = 1; j < array.length-i; j++) {
+            for (int j = 1; j < array.length-i; j++) { // '-i' is another optimization since the last item will have "bubbled" into its correct position
                 // check if items are out of order and perform a swap if they are
                 if(array[j] < array[j-1]) {
                     swap(array, j, j-1); // call swap method
