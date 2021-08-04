@@ -21,17 +21,17 @@ public class InsertionSort {
         }
     }
 
-    // a method for sorting an array in ascending order
+    // a method for sorting an array in ascending order -> best time complexity: O(n) | worst time complexity: O(n^2)
     public static void sort2(int[] array) {
         // iterate over the array starting at the second element (the first element will always be the beginning of the sorted partition)
         for (int i = 1; i < array.length; i++) {
             // store the current element
             int current = array[i];
-            // create j and set it to i minus one
+            // create a variable for inner loop that starts from the previous element 
             int j = i-1;
             // keep comparing the elements as long as they are not in the proper order
             while (j >= 0 && array[j] > current) {
-                array[j+1] = array[j]; // shift larger elements to the right (copying)
+                array[j+1] = array[j]; // shift larger elements to the right (replace by copying)
                 j--; // decrement j
             }
             array[j+1] = current; // place the current element in its proper place in the array
